@@ -1,0 +1,39 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:ExampleGridItemsHost"
+    xmlns:hostGrid="clr-namespace:ExampleGridItemsHost.HostGrid">
+
+    <Style TargetType="{x:Type hostGrid:MyGrid}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type hostGrid:MyGrid}">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                        <ItemsControl ItemsSource="{TemplateBinding ItemsSource}"
+                                      ItemTemplate="{TemplateBinding ItemTemplate}">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <Grid Background="Aquamarine">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition SharedSizeGroup="CellSquare"/>
+                                            <ColumnDefinition SharedSizeGroup="CellSquare"/>
+                                            <ColumnDefinition SharedSizeGroup="CellSquare"/>
+                                            <ColumnDefinition SharedSizeGroup="CellSquare"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition SharedSizeGroup="CellSquare"/>
+                                            <RowDefinition SharedSizeGroup="CellSquare"/>
+                                            <RowDefinition SharedSizeGroup="CellSquare"/>
+                                        </Grid.RowDefinitions>
+                                    </Grid>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                        </ItemsControl>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

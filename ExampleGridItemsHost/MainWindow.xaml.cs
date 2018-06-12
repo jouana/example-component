@@ -24,5 +24,10 @@ namespace ExampleGridItemsHost
         {
             InitializeComponent();
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            ((MainWindowViewModel)this.DataContext).OnLoaded();
+        }
     }
 }
